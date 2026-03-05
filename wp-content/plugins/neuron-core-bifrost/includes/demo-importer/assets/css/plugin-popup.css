@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Demo Importer Styles for Neuron Core Bifrost
+   ========================================================================== */
+
+/* Grid Container */
+.neuron-admin__demo-importer .ocdi__gl-item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Grid Item - Override any width from other plugins */
+.neuron-admin__demo-importer .ocdi__gl-item {
+  background: #fff;
+  border: 1px solid #ccd0d4;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  overflow: hidden;
+  width: 100% !important;
+}
+
+/* Image Container - Use aspect ratio box technique */
+.neuron-admin__demo-importer .ocdi__gl-item-image-container {
+  position: relative;
+  padding-bottom: 66.67%;
+  background: #f0f0f1;
+}
+
+.neuron-admin__demo-importer .ocdi__gl-item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer */
+.neuron-admin__demo-importer .ocdi__gl-item-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 15px;
+  border-top: 1px solid #ccd0d4;
+  gap: 10px;
+}
+
+.neuron-admin__demo-importer .ocdi__gl-item-footer--title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.neuron-admin__demo-importer .ocdi__gl-item-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.neuron-admin__demo-importer .ocdi__gl-item-footer--category {
+  color: #646970;
+  font-size: 12px;
+}
+
+
+.neuron-admin__demo-importer .ocdi__gl-item-footer--buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.neuron-admin__demo-importer .ocdi__gl-item-footer--buttons .button {
+  flex: 1;
+  text-align: center;
+}
+
+/* Loading Spinner */
+.neuron-admin__demo-importer .js-ocdi-gl-import-data {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.neuron-admin__demo-importer .js-ocdi-gl-import-data .ab-icon {
+  display: none;
+  font: normal 16px/1 dashicons;
+  animation: ocdi-spin 1s linear infinite;
+}
+
+.neuron-admin__demo-importer .js-ocdi-gl-import-data .ab-icon:before {
+  content: "\f463";
+}
+
+.neuron-admin__demo-importer .js-ocdi-gl-import-data.loading .ab-icon {
+  display: inline-block;
+}
+
+@keyframes ocdi-spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Filter Header
+   ========================================================================== */
+
+.neuron-admin__demo-importer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  background: #fff;
+  border: 1px solid #ccd0d4;
+}
+
+.neuron-admin__demo-importer--search input {
+  padding: 8px 12px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  min-width: 220px;
+  font-size: 13px;
+}
+
+.neuron-admin__demo-importer--filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.neuron-admin__demo-importer--filters .ocdi-filter-item {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #f0f0f1;
+  border: 1px solid #c3c4c7;
+  border-radius: 3px;
+  color: #2c3338;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all .15s ease;
+}
+
+.neuron-admin__demo-importer--filters .ocdi-filter-item:hover {
+  background: #e0e0e0;
+  border-color: #8c8f94;
+}
+
+.neuron-admin__demo-importer--filters .ocdi-filter-item.active {
+  background: #2271b1;
+  border-color: #2271b1;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Response Area
+   ========================================================================== */
+
+.ocdi__response {
+  margin-top: 20px;
+  padding: 12px;
+  background: #f6f7f7;
+}
+
+.ocdi__response:empty {
+  display: none;
+}
+
+/* ==========================================================================
+   Plugin Installation Popup
+   ========================================================================== */
+
+.ocdi-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocdi-popup-content {
+  background: #fff;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0,0,0,.3);
+}
+
+.ocdi-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ocdi-popup-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.ocdi-popup-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  line-height: 1;
+}
+
+.ocdi-popup-close:hover {
+  color: #000;
+}
+
+.ocdi-popup-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.ocdi-popup-body > p {
+  margin: 0 0 15px;
+  color: #666;
+}
+
+.ocdi-popup-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 15px 20px;
+  border-top: 1px solid #ddd;
+  background: #f6f7f7;
+}
+
+/* Plugin List */
+.ocdi-plugins-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ocdi-plugin-item {
+  padding: 12px 15px;
+  background: #f6f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.ocdi-plugin-item[data-status="active"] {
+  background: #edfaef;
+  border-color: #46b450;
+}
+
+.ocdi-plugin-item[data-status="installed"] {
+  background: #fff8e5;
+  border-color: #dba617;
+}
+
+.ocdi-plugin-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ocdi-plugin-name {
+  font-weight: 600;
+}
+
+.ocdi-plugin-status {
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ocdi-status-not_installed {
+  background: #ddd;
+  color: #555;
+}
+
+.ocdi-status-installed {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.ocdi-status-active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.ocdi-plugin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ocdi-plugin-message {
+  margin-top: 8px;
+  font-size: 13px;
+  min-height: 18px;
+}
+
+.ocdi-plugin-message .ocdi-loading {
+  color: #2271b1;
+}
+
+.ocdi-plugin-message .ocdi-loading:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  animation: ocdi-spin .6s linear infinite;
+}
+
+.ocdi-plugin-message .ocdi-success {
+  color: #00a32a;
+}
+
+.ocdi-plugin-message .ocdi-error {
+  color: #d63638;
+}
+
+/* Footer Buttons */
+.ocdi-install-activate-all {
+  background: #2271b1;
+  border-color: #2271b1;
+  color: #fff;
+}
+
+.ocdi-proceed-import:disabled {
+  opacity: .5;
+}
+
+/* ==========================================================================
+   Import Progress
+   ========================================================================== */
+
+.ocdi-import-progress-wrapper {
+  padding: 10px 0;
+}
+
+.ocdi-import-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ocdi-import-status {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ocdi-import-percentage {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2271b1;
+}
+
+.ocdi-progress-bar-container {
+  height: 6px;
+  background: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.ocdi-progress-bar {
+  height: 100%;
+  background: #2271b1;
+  transition: width .5s ease;
+}
+
+.ocdi-import-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ocdi-step {
+  padding: 10px 12px;
+  background: #f6f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #646970;
+  font-size: 13px;
+}
+
+.ocdi-step.active {
+  background: #fff8e5;
+  border-color: #dba617;
+  color: #1d2327;
+}
+
+.ocdi-step.completed {
+  background: #edfaef;
+  border-color: #46b450;
+  color: #1d2327;
+}
+
+/* ==========================================================================
+   Success Animation
+   ========================================================================== */
+
+.ocdi-success-animation {
+  width: 80px;
+  height: 80px;
+  margin: 30px auto;
+  background: #00a32a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ocdi-success-checkmark {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.ocdi-success-checkmark:before,
+.ocdi-success-checkmark:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.ocdi-success-checkmark:before {
+  width: 5px;
+  height: 25px;
+  left: 22px;
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.ocdi-success-checkmark:after {
+  width: 5px;
+  height: 12px;
+  left: 10px;
+  top: 18px;
+  transform: rotate(-45deg);
+}
+
+.ocdi-success-message {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00a32a;
+  margin-top: 15px;
+}
+
+.ocdi-fade-out {
+  animation: ocdi-fadeout .3s ease forwards;
+}
+
+@keyframes ocdi-fadeout {
+  to { opacity: 0; }
+}

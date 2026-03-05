@@ -1,0 +1,30 @@
+{
+  "name": "bifrost",
+  "scripts": {
+    "sass:bifrost": "node-sass --include-path node_modules --source-map-embed source/styles/main.scss assets/styles/bifrost.css && postcss assets/styles/bifrost.css --use autoprefixer -d assets/styles/",
+    "sass:bifrost:prod": "node-sass --output-style --include-path node_modules source/styles/main.scss assets/styles/bifrost.css && postcss --no-map assets/styles/bifrost.css --use autoprefixer -d assets/styles/",
+    "sass": "npm run sass:bifrost",
+    "sass:prod": "npm run sass:bifrost:prod",
+    "sass:watch": "nodemon -e scss -x \"npm run sass:bifrost\"",
+    "js": "webpack -d source/scripts/app.js assets/scripts/bifrost.js",
+    "js:prod": "webpack -p source/scripts/app.js assets/scripts/bifrost.js",
+    "js:watch": "webpack -d --watch source/scripts/app.js assets/scripts/bifrost.js"
+  },
+  "browserslist": "last 4 versions",
+  "author": "Neuron Themes",
+  "devDependencies": {
+    "autoprefixer": "^7.1.3",
+    "imports-loader": "^0.7.1",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
+    "postcss": "^6.0.10",
+    "postcss-cli": "^4.1.0",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
+    "bootstrap": "^4.1.1",
+    "headroom.js": "^0.9.4",
+    "theia-sticky-sidebar": "^1.7.0"
+  }
+}

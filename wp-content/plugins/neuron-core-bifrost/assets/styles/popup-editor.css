@@ -1,0 +1,215 @@
+/**
+ * Neuron Popup Editor Styles
+ *
+ * @since 2.5.0
+ */
+
+/* Display Settings Container */
+.neuron-popup__display-settings {
+	text-align: left;
+}
+
+.neuron-popup__display-settings .elementor-control-type-section {
+	display: none;
+}
+
+.neuron-popup__display-settings__group-toggle {
+	flex-grow: 1;
+}
+
+/* Controls Group */
+.neuron-popup__display-settings_controls_group {
+	display: flex;
+	align-items: center;
+	height: 60px;
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding-right: 20px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+}
+
+.neuron-popup__display-settings_controls_group:not(.elementor-active) .elementor-control:nth-child(2) h3 {
+	color: #a4afb7;
+}
+
+.neuron-popup__display-settings_controls_group.elementor-active span.elementor-switch-label {
+	background: #39b54a !important;
+}
+
+/* Group Icon */
+.neuron-popup__display-settings_controls_group__icon {
+	width: 60px;
+	height: 60px;
+	border-right: 1px solid #e6e9ec;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.neuron-popup__display-settings_controls_group__icon img {
+	width: 35px;
+}
+
+/* Controls within group */
+.neuron-popup__display-settings_controls_group .elementor-control {
+	padding: 0;
+	margin: 0;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control:nth-child(2) {
+	width: 230px;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control:nth-child(2) h3 {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control:not(:last-child) {
+	margin-left: 25px;
+}
+
+/* Switcher control */
+.neuron-popup__display-settings_controls_group .elementor-control-type-switcher label.elementor-switch {
+	width: 40px;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control-type-switcher .elementor-switch-label {
+	background: #a4afb7;
+	box-shadow: none;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control-type-switcher .elementor-switch-label:before,
+.neuron-popup__display-settings_controls_group .elementor-control-type-switcher .elementor-switch-label:after {
+	display: none;
+}
+
+/* Slider control */
+.neuron-popup__display-settings_controls_group .elementor-control-type-slider .elementor-control-input-wrapper {
+	display: flex;
+}
+
+.neuron-popup__display-settings_controls_group .elementor-control-type-slider .elementor-slider-input {
+	width: 45%;
+}
+
+/* Switcher field alignment */
+.neuron-popup__display-settings_controls_group .elementor-control-type-switcher .elementor-control-field {
+	justify-content: flex-end;
+}
+
+/* Timing Controls */
+#neuron-popup-timing__controls .select2-selection {
+	min-height: 27px;
+}
+
+#neuron-popup-timing__controls .select2-selection__rendered {
+	line-height: 1;
+}
+
+#neuron-popup-timing__controls .select2-selection__choice {
+	font-size: 10px;
+}
+
+/* URL timing group */
+#neuron-popup__timing-controls-group--url .elementor-control-url_url .elementor-control-input-wrapper {
+	width: 200px;
+}
+
+/* Sources timing group */
+#neuron-popup__timing-controls-group--sources .elementor-control-sources_sources .elementor-control-input-wrapper {
+	width: 300px;
+}
+
+/* Devices timing group */
+#neuron-popup__timing-controls-group--devices .elementor-control-devices_devices .elementor-control-input-wrapper {
+	width: 200px;
+}
+
+/* Logged in timing group */
+#neuron-popup__timing-controls-group--logged_in .elementor-control-logged_in_roles .elementor-control-input-wrapper {
+	width: 195px;
+}
+
+/* Introduction popup */
+#neuron-popup-settings-introduction {
+	position: absolute;
+	z-index: 1;
+	background-color: #fff;
+	color: #555;
+	box-shadow: -4px -3px 20px 1px rgba(0, 0, 0, 0.07);
+	height: 100px;
+	width: 260px;
+	padding: 20px 20px;
+	border-radius: 3px;
+}
+
+#neuron-popup-settings-introduction:before {
+	content: "";
+	position: absolute;
+	border: solid transparent;
+	border-width: 5px 7px;
+	border-right-color: #fff;
+	left: 4px;
+	bottom: -12px;
+	transform: rotate(270deg);
+}
+
+#neuron-popup-settings-introduction .dialog-close-button {
+	top: 5px;
+	right: 20px;
+	font-size: 13px;
+}
+
+#neuron-popup-settings-introduction .dialog-header {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#neuron-popup-settings-introduction .dialog-message {
+	margin-top: 10px;
+}
+
+/* Editor popup indicator */
+.elementor-editor-popup .elementor-tab-control-settings a:before {
+	content: "\e922";
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	#neuron-publish__tabs {
+		background-color: transparent;
+	}
+
+	.neuron-publish__tab {
+		color: #fff;
+	}
+
+	.neuron-publish__tab.elementor-active {
+		background: transparent;
+	}
+
+	.neuron-popup__display-settings_controls_group {
+		background-color: transparent;
+	}
+
+	#elementor-theme-builder-conditions .elementor-control {
+		background-color: transparent;
+	}
+
+	#elementor-theme-builder-conditions .elementor-repeater-tool-remove {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	#elementor-theme-builder-conditions .elementor-control-type[data-elementor-condition-type="exclude"] select {
+		background-color: #d30c5c;
+	}
+
+	#elementor-theme-builder-conditions .elementor-control-type[data-elementor-condition-type="include"] select {
+		background-color: #39b54a;
+	}
+}
